@@ -1,0 +1,77 @@
+---
+title: "STAT 184 FINAL JO X ERYN"
+author: "Josiah Harrison"
+date: "2023-12-04"
+output: github_document
+---
+library(ggplot2)
+```{r}
+library(ggplot2)
+```
+
+```{r}
+race_data <- read.csv("C:/Users/Owner/Downloads/google_ethnicity.csv", header = T)
+str(race_data)
+ggplot(race_data, aes(x = Asian, y = Characteristic, fill = Asian)) +
+  geom_bar(stat = "identity")  + xlim(0,100) + ylim(2010,2025) +
+  labs(title = "Bar Graph of CSV Data", x = "Year", y = "Black")
+```
+
+```{r}
+race_data <- read.csv("C:/Users/Owner/Downloads/google_ethnicity.csv")
+race_data <- data.frame(category = c("Asian", "Black", "Latinx", "Native American", "White"), value = c(44.8, 5.6, 7.3, 0.8, 46.2))
+
+ggplot(race_data, aes(x = category, y = value, fill = category)) + geom_bar(stat = "identity") + ggtitle("Percentages of Each Race at Google") + xlab("Race") + ylab("Percentage") + ylim(0,100) + theme_minimal() 
+
+
+race_data <- data.frame(category = c("Asian", "Black", "Latinx", "Native American", "White"), value = c(31.5, 2.4, 4.5, 1.0, 64.5))
+
+ggplot(race_data, aes(x = category, y = value, fill = category)) + geom_bar(stat = "identity") + ggtitle("Percentages of Each Race at Google") + xlab("Race") + ylab("Percentage") + ylim(0,100) + theme_minimal() 
+```
+
+```{r}
+read_data <- read.csv("C:/Users/Owner/Downloads/google_ethnicity.csv")
+##plot(race_data$Characteristic, race_data$Characteristic)
+
+##plot(race_data$Characteristic, as.integer(race_data$Asian))
+plot(race_data$Characteristic, race_data$)
+```
+```{r}
+races_data <- read.csv("C:/Users/Owner/Desktop/R-STAT 184/STAT 184 FA23/FinalProject.csv")
+
+head(races_data)
+```
+
+```{r}
+races_data <- read.csv("C:/Users/Owner/Desktop/R-STAT 184/STAT 184 FA23/FinalProject.csv")
+
+
+
+#create_bar_graph <- function(races_data, start_year, title) {
+ # subset_data <- subset(races_data, Year >= start_year)
+comparison_14_20 <- subset(races_data, Year %in% c(2014,2020)) 
+
+  ggplot(comparison_14_20, aes(x = Ethinicity, y = Percent, fill = factor(Year))) +
+    geom_bar(stat = "identity")  +
+    labs(title = title, x = "Ethnic Group", y = "Percentage") +
+    theme_minimal()
+
+
+# Create bar graph for 2014 to 2020
+create_bar_graph(races_data, 2014, "Ethnic Group Distribution: 2014 to 2020")
+
+# Create bar graph for 2020 to 2023
+#create_bar_graph(data, 2020, 2023, "Ethnic Group Distribution: 2020 to 2023")
+
+# Create bar graph for 2014 to 2023
+#create_bar_graph(data, 2014, 2023, "Ethnic Group Distribution: 2014 to 2023")
+```
+
+```{r}
+read_data <- read.csv("C:/Users/Owner/Downloads/google_ethnicity.csv")
+
+ggplot(race_data, aes(x = as.factor(Asian), fill = as.factor(Asian))) +
+  geom_bar() +
+  ylim(2010,max(Year)) +
+  labs(title = "Bar Graph of CSV Data", x = "Asian", y = "Characteristic")
+```
